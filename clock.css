@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* background-color: #000; */
+}
+
+.clock {
+  /* background-color: tomato; */
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border: 20px solid darkgrey;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  background: bisque;
+  transform: translate(-50%, -50%);
+  box-shadow: inset 0px 6px 10px black;
+}
+
+.sec {
+  position: absolute;
+  content: "";
+  height: 140px;
+  width: 5px;
+  background-color: red;
+  top: 50%;
+  left: calc(50% - 2.5px);
+  border-radius: 2.5px;
+  /* animation: spin 1s linear infinite; */
+  animation: spin 60s linear infinite;
+  transform-origin: top;
+}
+
+.min {
+  position: absolute;
+  content: "";
+  height: 130px;
+  width: 5px;
+  background-color: black;
+  top: 50%;
+  left: calc(50% - 2.5px);
+  border-radius: 2.5px;
+  /* animation: spin 60s linear infinite; */
+  animation: spin 3600s linear infinite;
+  transform-origin: top;
+}
+
+.hour {
+  position: absolute;
+  content: '';
+  height: 100px;
+  width: 10px;
+  background: black;
+  top: 50%;
+  left: calc(50% - 5px);
+  border-radius: 5px;
+  /* animation: spin 720s linear infinite; */
+  animation: spin 43200s linear infinite;
+  transform-origin: top;
+}
+
+
+
+@keyframes spin {
+  0% {
+    transform: rotate(-180deg);
+  }
+
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: brown;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+}
+
+body::after {
+  content: '12';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  /* border-radius: 50%; */
+  /* background-color: black; */
+  left: 50%;
+  top: calc(50% - 145px);
+  /* z-index: 0; */
+  transform: translateX(-50%);
+  box-shadow: 140px 145px 0 0 black,-140px 145px 0 0 black,0px 283px 0 0 black;
+}
